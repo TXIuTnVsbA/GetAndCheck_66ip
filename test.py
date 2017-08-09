@@ -41,9 +41,9 @@ def Online_CheckProxy_Custom(ip):
             'Referer': 'http://www.66ip.cn/yz/'}
     Post_data = 'ipadd='+ip
     req = requests.post(url='http://www.66ip.cn/yz/post.php', headers=HEAD, data=Post_data).content
+    print req
     if(req.find('能提供Http代理功能')!=-1):
-        print req
-        #writ(req)
+        writ(req)
 ########################################################
 def Offline_CheckProxy(proxy,url):
     """
