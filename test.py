@@ -75,4 +75,5 @@ def writ(str):
         fp.close()
 ###########################################################
 if __name__ == '__main__':
-    GetProxy(20)
+	while (1):
+		GetProxy(50)
