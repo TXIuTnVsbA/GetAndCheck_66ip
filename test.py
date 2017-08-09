@@ -40,8 +40,10 @@ def Online_CheckProxy_Custom(ip):
             'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8',
             'Referer': 'http://www.66ip.cn/yz/'}
     Post_data = 'ipadd='+ip
-    print requests.post(url='http://www.66ip.cn/yz/post.php', headers=HEAD, data=Post_data).content
-    #暂时不搞识别并输出功能
+    req = requests.post(url='http://www.66ip.cn/yz/post.php', headers=HEAD, data=Post_data).content
+    if(req.find('能提供Http代理功能')!=-1):
+        print req
+        #writ(req)
 ########################################################
 def Offline_CheckProxy(proxy,url):
     """
@@ -73,4 +75,4 @@ def writ(str):
         fp.close()
 ###########################################################
 if __name__ == '__main__':
-    GetProxy()
+    GetProxy(20)
